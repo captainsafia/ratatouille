@@ -5,9 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "prepublish": "npm run build",
-    "build": "build:clean && build:lib",
     "build:lib": "babel src -d lib",
-    "build:clean": "rimraf lib"
+    "build:clean": "rimraf lib",
+    "build": "npm run build:clean && npm run build:lib"
   },
   "keywords": [
     "allrecipes",
