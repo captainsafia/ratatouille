@@ -52,7 +52,7 @@ export default class IngredientsParser {
   }
 
   get ingredients() {
-    return (this.$('span.recipe-ingred_txt[itemprop="ingredients"]')).map(function(index, element) {
+    return (this.$('span.recipe-ingred_txt[itemprop="ingredients"]')).map((index, element) => {
       const text = element.children[0].data;
       const ingredient = new IngredientParser(text);
       return {
