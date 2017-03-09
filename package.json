@@ -1,0 +1,45 @@
+{
+  "name": "@captainsafia/ratatouille",
+  "version": "1.0.0",
+  "description": "A Node.js interface to Allrecipes.com",
+  "main": "src/index.js",
+  "scripts": {
+    "prepublish": "npm run build",
+    "build": "build:clean && build:lib",
+    "build:lib": "babel src -d lib",
+    "build:clean": "rimraf lib"
+  },
+  "keywords": [
+    "allrecipes",
+    "interface",
+    "cooking"
+  ],
+  "author": "Safia Abdalla <safia@safia.rocks>",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "moment": "^2.17.1",
+    "node-fetch": "^1.6.3",
+    "pos": "^0.4.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-env": "^1.2.1",
+    "rimraf": "^2.6.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
