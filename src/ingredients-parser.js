@@ -1,9 +1,9 @@
 import cheerio from 'cheerio';
+import { units } from './phrases';
 
 class IngredientParser {
   constructor(text) {
     this.strings = this.parseText(text);
-    this.units = ['cup', 'cups', 'ounce'];
   }
 
   parseText(text) {
@@ -12,14 +12,18 @@ class IngredientParser {
 
   get unit() {
     const unit = this.strings.filter((string) => {
-      return this.units.indexOf(string) >= 0;
+      return units.indexOf(string) >= 0;
     })[0];
     return unit;
   }
 
   get quantity() {
     const unitIndex = this.strings.indexOf(this.unit);
-    return this.strings[unitIndex - 1];
+    if (!isNaN(this.strings[unitIndex - 2])) {
+      return this.strings[unitIndex - 2] + ' ' + this.strings[unitIndex - 1];
+    } else {
+      return this.strings[unitIndex - 1];
+    }
   }
 
   get preparation() {

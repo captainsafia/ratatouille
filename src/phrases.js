@@ -30,3 +30,14 @@ export const tools = [
   'pot',
   'slow cooker'
 ];
+
+export const units = [
+  'cup',
+  'cups',
+  'ounce',
+  'teaspoon',
+  'teaspoons',
+  'tablespoon',
+  'tablespoons',
+  'cloves'
+];
