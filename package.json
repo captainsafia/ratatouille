@@ -2,7 +2,7 @@
   "name": "@captainsafia/ratatouille",
   "version": "1.0.0",
   "description": "A Node.js interface to Allrecipes.com",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "prepublish": "npm run build",
     "build:lib": "babel src -d lib",
@@ -15,6 +15,10 @@
     "cooking"
   ],
   "author": "Safia Abdalla <safia@safia.rocks>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/captainsafia/ratatouille"
+  },
   "license": "MIT",
   "dependencies": {
     "cheerio": "^0.22.0",
