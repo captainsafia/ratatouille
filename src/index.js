@@ -48,7 +48,7 @@ export default class Ratatouille {
   }
 
   get steps() {
-    const stepsParser = new StepsParser(this.$);
+    const stepsParser = new StepsParser(this.$, this.ingredients);
     return stepsParser.steps;
   }
 }

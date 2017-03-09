@@ -26,6 +26,7 @@ export const tools = [
   'skillet',
   'wok',
   'baking sheet',
+  'cookie sheets',
   'casserole dish',
   'pot',
   'slow cooker'
