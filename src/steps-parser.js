@@ -1,5 +1,5 @@
 import pos from 'pos';
-import { tools } from './phrases';
+import { methods, tools } from './phrases';
 
 class StepParser {
   constructor(text, ingredients) {
@@ -13,9 +13,7 @@ class StepParser {
   }
 
   get method() {
-    const words = new pos.Lexer().lex(this.text);
-    const taggedWords = new pos.Tagger().tag(words);
-    return taggedWords.filter((tag) => tag[1] === 'VB').map((tag) => tag[0]);
+    return methods.filter((method) => this.text.includes(method));
   }
 
   get tools() {
