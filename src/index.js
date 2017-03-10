@@ -21,7 +21,9 @@ export default class Ratatouille {
   }
 
   get servings() {
-    return this.$('.servings-count span:first-child').text();
+    const rawString = this.$('.adjustServings .subtext').text();
+    const numServings = rawString.match(/\d+/g)
+    return numServings ? numServings[0] : 0;
   }
 
   get readyInTime() {
@@ -38,7 +40,7 @@ export default class Ratatouille {
     const duration = this.$('[itemProp="cookTime"]').attr('datetime');
     return moment.duration(duration).humanize();
   }
-  
+
   get calories() {
     return this.$('.calorie-count span:first-child').text();
   }
