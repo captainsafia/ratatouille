@@ -13,7 +13,7 @@ npm install @captainsafia/ratatouille
 ### Usage
 
 ```
-> import Ratatouille from 'ratatouille';
+> import Ratatouille from '@captainsafia/ratatouille';
 > const recipe = Ratatouille.load('http://allrecipes.com/recipe/254910/kicked-up-mac-cheese').then(function(html) {
                                                                                                                   return new Ratatouille(html);
                                                                                                             }});
