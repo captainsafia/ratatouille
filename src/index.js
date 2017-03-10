@@ -1,17 +1,19 @@
 import cheerio from 'cheerio';
-import fetch from 'node-fetch';
+import request from 'sync-request';
 import moment from 'moment';
 
 import IngredientsParser from './ingredients-parser.js';
 import StepsParser from './steps-parser.js';
 
 export default class Ratatouille {
-  constructor(html) {
-    this.$ = cheerio.load(html);
-  }
-
-  static load(url) {
-    return fetch(url).then((response) => response.text());
+  constructor(url) {
+    if (this.isValidURL(url)) {
+      this.url = url;
+      const html = request('GET', url).getBody();
+      this.$ = cheerio.load(html);
+    } else {
+      throw new Error(`URL ${url} is invalid!`);
+    }
   }
 
   isValidURL(url) {
