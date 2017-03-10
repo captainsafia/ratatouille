@@ -14,7 +14,9 @@ npm install @captainsafia/ratatouille
 
 ```
 > import Ratatouille from 'ratatouille';
-> const recipe = new Ratatouille('http://allrecipes.com/recipe/254910/kicked-up-mac-cheese');
+> const recipe = Ratatouille.load('http://allrecipes.com/recipe/254910/kicked-up-mac-cheese').then(function(html) {
+                                                                                                                  return new Ratatouille(html);
+                                                                                                            }});
 > recipe.readyInTime
 '25 minutes'
 > recipe.prepTime

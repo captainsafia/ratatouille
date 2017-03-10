@@ -6,13 +6,12 @@ import IngredientsParser from './ingredients-parser.js';
 import StepsParser from './steps-parser.js';
 
 export default class Ratatouille {
-  constructor(url) {
-    if (this.isValidURL(url)) {
-      this.url = url;
-      fetch(url).then((response) => response.text()).then((body) => this.$ = cheerio.load(body));
-    } else {
-      throw new Error(`URL ${url} is invalid!`);
-    }
+  constructor(html) {
+    this.$ = cheerio.load(html);
+  }
+
+  static load(url) {
+    return fetch(url).then((response) => response.text());
   }
 
   isValidURL(url) {
