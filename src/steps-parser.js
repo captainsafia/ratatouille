@@ -40,6 +40,7 @@ export default class StepsParser {
           method: step.method,
           tools: step.tools,
           ingredients: step.ingredientsUsed,
+          raw: text,
         };
       }
     }).toArray();
