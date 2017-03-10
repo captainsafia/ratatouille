@@ -9,7 +9,7 @@ export default class Ratatouille {
   constructor(url) {
     if (this.isValidURL(url)) {
       this.url = url;
-      const html = request('GET', url).getBody();
+      const html = request('GET', url).getBody('utf8');
       this.$ = cheerio.load(html);
     } else {
       throw new Error(`URL ${url} is invalid!`);
