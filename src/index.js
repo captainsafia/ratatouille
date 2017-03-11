@@ -20,6 +20,10 @@ export default class Ratatouille {
     return url.includes('allrecipes.com');
   }
 
+  get name() {
+    return this.$('[itemProp="name"]').text();
+  }
+
   get servings() {
     const rawString = this.$('.adjustServings .subtext').text();
     const numServings = rawString.match(/\d+/g)
