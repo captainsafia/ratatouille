@@ -1,0 +1,15 @@
+{
+  "include": ["src/**/*"],
+  "exclude": ["src/tests/**/*"],
+  "compilerOptions": {
+    "lib": ["ESNext"],
+    "declaration": true,
+    "importHelpers": true,
+    "module": "commonjs",
+    "outDir": "lib",
+    "rootDir": "src",
+    "strict": true,
+    "target": "es2017",
+    "esModuleInterop": true
+  }
+}
